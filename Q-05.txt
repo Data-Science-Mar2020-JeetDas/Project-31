@@ -1,0 +1,559 @@
+
+#******************* Question - 05 : 2016 : Total NCD Deaths (in thousands) ********************
+
+
+df2016 = df[df.Period == 2016]
+print("\n\n--------------[ OUTPUT for 2016 ]----------------------\n\n")
+print(df2016[['Location','Period','Dim1','First Tooltip']])
+
+df2016_both = df2016[df2016.Dim1 == 'Both sexes']
+print("\n\n--------------[ OUTPUT for 2016 Both sexes ]----------------------\n\n")
+print(df2016_both[['Location','Period','Dim1','First Tooltip']])
+
+df2016_male = df2016[df2016.Dim1 == 'Male']
+print("\n\n--------------[ OUTPUT for 2016 Male ]----------------------\n\n")
+print(df2016_male[['Location','Period','Dim1','First Tooltip']])
+
+df2016_female = df2016[df2016.Dim1 == 'Female']
+print("\n\n--------------[ OUTPUT for 2016 Female ]----------------------\n\n")
+print(df2016_female[['Location','Period','Dim1','First Tooltip']])
+
+i = np.arange(len(df2016_both['Location']))
+print(i)
+
+i1 = np.arange(len(df2016_male['Location']))
+print(i1)
+
+i2 = np.arange(len(df2016_female['Location']))
+print(i2)
+
+#--------------- plot for 2016 ----------------------
+
+plt.title('Question - 05 : 2016 : Total NCD Deaths (in thousands)')
+
+plt.xlabel("Country sl. no --- >")
+plt.ylabel("Number(First Tooltip) --- >")
+
+plt.plot(i,df2016_both['First Tooltip'],
+            marker=7,
+            markersize=10,
+            linestyle='dashed',
+            label="[1] For Both sexes")
+
+plt.plot(i1,df2016_male['First Tooltip'],
+            marker='*',
+            markersize=10,
+            linestyle='dashed',
+            label="[2] For male only")
+
+plt.plot(i2,df2016_female['First Tooltip'],
+            marker='+',
+            markersize=10,
+            linestyle='dashed',
+            label="[3] For Female only")
+
+plt.legend()
+plt.show()
+
+
+
+
+
+
+
+--------------[ OUTPUT for 2016 ]----------------------
+
+
+                                Location  Period        Dim1  First Tooltip
+0                            Afghanistan    2016  Both sexes         109.50
+1                            Afghanistan    2016        Male          55.87
+2                            Afghanistan    2016      Female          53.66
+14                               Albania    2016  Both sexes          24.28
+15                               Albania    2016        Male          13.33
+16                               Albania    2016      Female          10.95
+28                               Algeria    2016  Both sexes         144.00
+29                               Algeria    2016        Male          72.54
+30                               Algeria    2016      Female          71.45
+42                                Angola    2016  Both sexes          61.86
+43                                Angola    2016        Male          30.81
+44                                Angola    2016      Female          31.05
+56                   Antigua and Barbuda    2016  Both sexes           0.53
+57                   Antigua and Barbuda    2016        Male           0.27
+58                   Antigua and Barbuda    2016      Female           0.26
+68                             Argentina    2016  Both sexes         254.50
+69                             Argentina    2016        Male         128.50
+70                             Argentina    2016      Female         126.00
+82                               Armenia    2016  Both sexes          26.30
+83                               Armenia    2016        Male          13.07
+84                               Armenia    2016      Female          13.23
+96                             Australia    2016  Both sexes         142.70
+97                             Australia    2016        Male          72.22
+98                             Australia    2016      Female          70.53
+110                              Austria    2016  Both sexes          74.36
+111                              Austria    2016        Male          35.44
+112                              Austria    2016      Female          38.93
+124                           Azerbaijan    2016  Both sexes          54.11
+125                           Azerbaijan    2016        Male          28.36
+126                           Azerbaijan    2016      Female          25.75
+                                 ...     ...         ...            ...
+2397         United Republic of Tanzania    2016  Both sexes         134.60
+2398         United Republic of Tanzania    2016        Male          66.72
+2399         United Republic of Tanzania    2016      Female          67.90
+2411            United States of America    2016  Both sexes        2474.00
+2412            United States of America    2016        Male        1242.00
+2413            United States of America    2016      Female        1232.00
+2425                             Uruguay    2016  Both sexes          27.79
+2426                             Uruguay    2016        Male          13.61
+2427                             Uruguay    2016      Female          14.18
+2439                          Uzbekistan    2016  Both sexes         143.50
+2440                          Uzbekistan    2016        Male          75.88
+2441                          Uzbekistan    2016      Female          67.61
+2453                             Vanuatu    2016  Both sexes           0.98
+2454                             Vanuatu    2016        Male           0.55
+2455                             Vanuatu    2016      Female           0.42
+2465  Venezuela (Bolivarian Republic of)    2016  Both sexes         125.80
+2466  Venezuela (Bolivarian Republic of)    2016        Male          68.66
+2467  Venezuela (Bolivarian Republic of)    2016      Female          57.15
+2479                            Viet Nam    2016  Both sexes         424.00
+2480                            Viet Nam    2016        Male         225.30
+2481                            Viet Nam    2016      Female         198.60
+2493                               Yemen    2016  Both sexes          98.58
+2494                               Yemen    2016        Male          49.93
+2495                               Yemen    2016      Female          48.65
+2507                              Zambia    2016  Both sexes          36.44
+2508                              Zambia    2016        Male          17.92
+2509                              Zambia    2016      Female          18.52
+2521                            Zimbabwe    2016  Both sexes          42.86
+2522                            Zimbabwe    2016        Male          19.27
+2523                            Zimbabwe    2016      Female          23.59
+
+[549 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2016 Both sexes ]----------------------
+
+
+                                               Location  Period        Dim1  \
+0                                           Afghanistan    2016  Both sexes   
+14                                              Albania    2016  Both sexes   
+28                                              Algeria    2016  Both sexes   
+42                                               Angola    2016  Both sexes   
+56                                  Antigua and Barbuda    2016  Both sexes   
+68                                            Argentina    2016  Both sexes   
+82                                              Armenia    2016  Both sexes   
+96                                            Australia    2016  Both sexes   
+110                                             Austria    2016  Both sexes   
+124                                          Azerbaijan    2016  Both sexes   
+138                                             Bahamas    2016  Both sexes   
+152                                             Bahrain    2016  Both sexes   
+166                                          Bangladesh    2016  Both sexes   
+180                                            Barbados    2016  Both sexes   
+194                                             Belarus    2016  Both sexes   
+208                                             Belgium    2016  Both sexes   
+222                                              Belize    2016  Both sexes   
+236                                               Benin    2016  Both sexes   
+250                                              Bhutan    2016  Both sexes   
+264                    Bolivia (Plurinational State of)    2016  Both sexes   
+278                              Bosnia and Herzegovina    2016  Both sexes   
+292                                            Botswana    2016  Both sexes   
+306                                              Brazil    2016  Both sexes   
+320                                   Brunei Darussalam    2016  Both sexes   
+334                                            Bulgaria    2016  Both sexes   
+348                                        Burkina Faso    2016  Both sexes   
+362                                             Burundi    2016  Both sexes   
+376                                          Cabo Verde    2016  Both sexes   
+390                                            Cambodia    2016  Both sexes   
+404                                            Cameroon    2016  Both sexes   
+                                                ...     ...         ...   
+2120                                          Sri Lanka    2016  Both sexes   
+2134                                              Sudan    2016  Both sexes   
+2148                                           Suriname    2016  Both sexes   
+2162                                             Sweden    2016  Both sexes   
+2176                                        Switzerland    2016  Both sexes   
+2190                               Syrian Arab Republic    2016  Both sexes   
+2204                                         Tajikistan    2016  Both sexes   
+2218                                           Thailand    2016  Both sexes   
+2232          The former Yugoslav Republic of Macedonia    2016  Both sexes   
+2246                                        Timor-Leste    2016  Both sexes   
+2260                                               Togo    2016  Both sexes   
+2274                                              Tonga    2016  Both sexes   
+2286                                Trinidad and Tobago    2016  Both sexes   
+2300                                            Tunisia    2016  Both sexes   
+2314                                             Turkey    2016  Both sexes   
+2328                                       Turkmenistan    2016  Both sexes   
+2341                                             Uganda    2016  Both sexes   
+2355                                            Ukraine    2016  Both sexes   
+2369                               United Arab Emirates    2016  Both sexes   
+2383  United Kingdom of Great Britain and Northern I...    2016  Both sexes   
+2397                        United Republic of Tanzania    2016  Both sexes   
+2411                           United States of America    2016  Both sexes   
+2425                                            Uruguay    2016  Both sexes   
+2439                                         Uzbekistan    2016  Both sexes   
+2453                                            Vanuatu    2016  Both sexes   
+2465                 Venezuela (Bolivarian Republic of)    2016  Both sexes   
+2479                                           Viet Nam    2016  Both sexes   
+2493                                              Yemen    2016  Both sexes   
+2507                                             Zambia    2016  Both sexes   
+2521                                           Zimbabwe    2016  Both sexes   
+
+      First Tooltip  
+0            109.50  
+14            24.28  
+28           144.00  
+42            61.86  
+56             0.53  
+68           254.50  
+82            26.30  
+96           142.70  
+110           74.36  
+124           54.11  
+138            1.77  
+152            2.32  
+166          572.60  
+180            2.67  
+194          107.50  
+208           94.92  
+222            1.36  
+236           35.10  
+250            3.23  
+264           45.92  
+278           36.32  
+292            7.19  
+306          975.40  
+320            1.39  
+334          101.30  
+348           52.09  
+362           30.52  
+376            2.07  
+390           59.86  
+404           82.72  
+            ...  
+2120         118.70  
+2134         147.10  
+2148           3.03  
+2162          81.96  
+2176          60.70  
+2190          67.81  
+2204          31.92  
+2218         399.10  
+2232          19.24  
+2246           3.27  
+2260          24.34  
+2274           0.52  
+2286           9.78  
+2300          61.88  
+2314         407.30  
+2328          30.15  
+2341          97.56  
+2355         578.20  
+2369          11.59  
+2383         533.10  
+2397         134.60  
+2411        2474.00  
+2425          27.79  
+2439         143.50  
+2453           0.98  
+2465         125.80  
+2479         424.00  
+2493          98.58  
+2507          36.44  
+2521          42.86  
+
+[183 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2016 Male ]----------------------
+
+
+                                               Location  Period  Dim1  \
+1                                           Afghanistan    2016  Male   
+15                                              Albania    2016  Male   
+29                                              Algeria    2016  Male   
+43                                               Angola    2016  Male   
+57                                  Antigua and Barbuda    2016  Male   
+69                                            Argentina    2016  Male   
+83                                              Armenia    2016  Male   
+97                                            Australia    2016  Male   
+111                                             Austria    2016  Male   
+125                                          Azerbaijan    2016  Male   
+139                                             Bahamas    2016  Male   
+153                                             Bahrain    2016  Male   
+167                                          Bangladesh    2016  Male   
+181                                            Barbados    2016  Male   
+195                                             Belarus    2016  Male   
+209                                             Belgium    2016  Male   
+223                                              Belize    2016  Male   
+237                                               Benin    2016  Male   
+251                                              Bhutan    2016  Male   
+265                    Bolivia (Plurinational State of)    2016  Male   
+279                              Bosnia and Herzegovina    2016  Male   
+293                                            Botswana    2016  Male   
+307                                              Brazil    2016  Male   
+321                                   Brunei Darussalam    2016  Male   
+335                                            Bulgaria    2016  Male   
+349                                        Burkina Faso    2016  Male   
+363                                             Burundi    2016  Male   
+377                                          Cabo Verde    2016  Male   
+391                                            Cambodia    2016  Male   
+405                                            Cameroon    2016  Male   
+                                                ...     ...   ...   
+2121                                          Sri Lanka    2016  Male   
+2135                                              Sudan    2016  Male   
+2149                                           Suriname    2016  Male   
+2163                                             Sweden    2016  Male   
+2177                                        Switzerland    2016  Male   
+2191                               Syrian Arab Republic    2016  Male   
+2205                                         Tajikistan    2016  Male   
+2219                                           Thailand    2016  Male   
+2233          The former Yugoslav Republic of Macedonia    2016  Male   
+2247                                        Timor-Leste    2016  Male   
+2261                                               Togo    2016  Male   
+2275                                              Tonga    2016  Male   
+2287                                Trinidad and Tobago    2016  Male   
+2301                                            Tunisia    2016  Male   
+2315                                             Turkey    2016  Male   
+2329                                       Turkmenistan    2016  Male   
+2342                                             Uganda    2016  Male   
+2356                                            Ukraine    2016  Male   
+2370                               United Arab Emirates    2016  Male   
+2384  United Kingdom of Great Britain and Northern I...    2016  Male   
+2398                        United Republic of Tanzania    2016  Male   
+2412                           United States of America    2016  Male   
+2426                                            Uruguay    2016  Male   
+2440                                         Uzbekistan    2016  Male   
+2454                                            Vanuatu    2016  Male   
+2466                 Venezuela (Bolivarian Republic of)    2016  Male   
+2480                                           Viet Nam    2016  Male   
+2494                                              Yemen    2016  Male   
+2508                                             Zambia    2016  Male   
+2522                                           Zimbabwe    2016  Male   
+
+      First Tooltip  
+1             55.87  
+15            13.33  
+29            72.54  
+43            30.81  
+57             0.27  
+69           128.50  
+83            13.07  
+97            72.22  
+111           35.44  
+125           28.36  
+139            0.89  
+153            1.31  
+167          306.70  
+181            1.33  
+195           51.20  
+209           46.19  
+223            0.76  
+237           16.56  
+251            1.73  
+265           23.48  
+279           17.76  
+293            3.40  
+307          516.80  
+321            0.72  
+335           51.94  
+349           23.00  
+363           15.71  
+377            0.93  
+391           28.32  
+405           41.87  
+            ...  
+2121          62.64  
+2135          74.43  
+2149           1.65  
+2163          39.57  
+2177          29.09  
+2191          34.60  
+2205          16.99  
+2219         215.50  
+2233          10.03  
+2247           1.69  
+2261          11.73  
+2275           0.28  
+2287           5.06  
+2301          32.66  
+2315         218.60  
+2329          16.12  
+2342          49.74  
+2356         267.90  
+2370           8.80  
+2384         259.50  
+2398          66.72  
+2412        1242.00  
+2426          13.61  
+2440          75.88  
+2454           0.55  
+2466          68.66  
+2480         225.30  
+2494          49.93  
+2508          17.92  
+2522          19.27  
+
+[183 rows x 4 columns]
+
+
+--------------[ OUTPUT for 2016 Female ]----------------------
+
+
+                                               Location  Period    Dim1  \
+2                                           Afghanistan    2016  Female   
+16                                              Albania    2016  Female   
+30                                              Algeria    2016  Female   
+44                                               Angola    2016  Female   
+58                                  Antigua and Barbuda    2016  Female   
+70                                            Argentina    2016  Female   
+84                                              Armenia    2016  Female   
+98                                            Australia    2016  Female   
+112                                             Austria    2016  Female   
+126                                          Azerbaijan    2016  Female   
+140                                             Bahamas    2016  Female   
+154                                             Bahrain    2016  Female   
+168                                          Bangladesh    2016  Female   
+182                                            Barbados    2016  Female   
+196                                             Belarus    2016  Female   
+210                                             Belgium    2016  Female   
+224                                              Belize    2016  Female   
+238                                               Benin    2016  Female   
+252                                              Bhutan    2016  Female   
+266                    Bolivia (Plurinational State of)    2016  Female   
+280                              Bosnia and Herzegovina    2016  Female   
+294                                            Botswana    2016  Female   
+308                                              Brazil    2016  Female   
+322                                   Brunei Darussalam    2016  Female   
+336                                            Bulgaria    2016  Female   
+350                                        Burkina Faso    2016  Female   
+364                                             Burundi    2016  Female   
+378                                          Cabo Verde    2016  Female   
+392                                            Cambodia    2016  Female   
+406                                            Cameroon    2016  Female   
+                                                ...     ...     ...   
+2122                                          Sri Lanka    2016  Female   
+2136                                              Sudan    2016  Female   
+2150                                           Suriname    2016  Female   
+2164                                             Sweden    2016  Female   
+2178                                        Switzerland    2016  Female   
+2192                               Syrian Arab Republic    2016  Female   
+2206                                         Tajikistan    2016  Female   
+2220                                           Thailand    2016  Female   
+2234          The former Yugoslav Republic of Macedonia    2016  Female   
+2248                                        Timor-Leste    2016  Female   
+2262                                               Togo    2016  Female   
+2276                                              Tonga    2016  Female   
+2288                                Trinidad and Tobago    2016  Female   
+2302                                            Tunisia    2016  Female   
+2316                                             Turkey    2016  Female   
+2330                                       Turkmenistan    2016  Female   
+2343                                             Uganda    2016  Female   
+2357                                            Ukraine    2016  Female   
+2371                               United Arab Emirates    2016  Female   
+2385  United Kingdom of Great Britain and Northern I...    2016  Female   
+2399                        United Republic of Tanzania    2016  Female   
+2413                           United States of America    2016  Female   
+2427                                            Uruguay    2016  Female   
+2441                                         Uzbekistan    2016  Female   
+2455                                            Vanuatu    2016  Female   
+2467                 Venezuela (Bolivarian Republic of)    2016  Female   
+2481                                           Viet Nam    2016  Female   
+2495                                              Yemen    2016  Female   
+2509                                             Zambia    2016  Female   
+2523                                           Zimbabwe    2016  Female   
+
+      First Tooltip  
+2             53.66  
+16            10.95  
+30            71.45  
+44            31.05  
+58             0.26  
+70           126.00  
+84            13.23  
+98            70.53  
+112           38.93  
+126           25.75  
+140            0.88  
+154            1.01  
+168          265.90  
+182            1.34  
+196           56.30  
+210           48.73  
+224            0.60  
+238           18.54  
+252            1.50  
+266           22.45  
+280           18.56  
+294            3.79  
+308          458.50  
+322            0.66  
+336           49.38  
+350           29.09  
+364           14.81  
+378            1.14  
+392           31.54  
+406           40.86  
+            ...  
+2122          56.08  
+2136          72.66  
+2150           1.39  
+2164          42.39  
+2178          31.61  
+2192          33.20  
+2206          14.93  
+2220         183.60  
+2234           9.22  
+2248           1.58  
+2262          12.61  
+2276           0.24  
+2288           4.72  
+2302          29.22  
+2316         188.70  
+2330          14.03  
+2343          47.82  
+2357         310.30  
+2371           2.79  
+2385         273.50  
+2399          67.90  
+2413        1232.00  
+2427          14.18  
+2441          67.61  
+2455           0.42  
+2467          57.15  
+2481         198.60  
+2495          48.65  
+2509          18.52  
+2523          23.59  
+
+[183 rows x 4 columns]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
+[  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35
+  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51  52  53
+  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68  69  70  71
+  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89
+  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107
+ 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125
+ 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143
+ 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161
+ 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179
+ 180 181 182]
